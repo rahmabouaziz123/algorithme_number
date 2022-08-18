@@ -1,0 +1,75 @@
+ALGORITHM controle
+VAR
+    tab1,tab2:ARRAY_OF INTEGER;
+    i,j:INTEGER=0;
+    s:INTEGER=0;
+    verif:BOOLEAN;
+BEGIN
+
+
+    //  *******************************sum of all distinct elements *********************************
+
+    FOR i FROM 0 TO tab1.lenght-1 STEP step  DO 
+        verif:=FALSE;
+        FOR j FROM 0 TO tab2.lenght-1 STEP step  DO
+            IF (tab1[i]=tab2[j]) THEN
+                verif:=TRUE;
+                BREAK;
+            END_IF
+        END_FOR
+        IF (verif=FALSE) THEN
+            s:=s+ta1[i];
+        END_IF
+        
+        
+    END_FOR
+    FOR i FROM 0 TO tab2.lenght-1 STEP step  DO 
+        verif:=FALSE;
+        FOR j FROM 0 TO tab1.lenght-1 STEP step  DO
+            IF (tab2[i]=tab1[j]) THEN
+                verif:=TRUE;
+                BREAK;
+            END_IF
+        END_FOR
+        IF (verif=FALSE) THEN
+            s:=s+tab2[i];
+        END_IF
+               
+    END_FOR
+    Write("sum of all distinct elements " ,s)
+
+
+    //  ******************************* sum of all commun elements *********************************
+
+         FOR i FROM 0 TO tab1.lenght-1 STEP step  DO 
+        verif:=FALSE;
+        FOR j FROM 0 TO tab2.lenght-1 STEP step  DO
+            IF (tab1[i]<>tab2[j]) THEN
+                verif:=TRUE;
+               
+            else
+             verif:=FALSE;
+        END_FOR
+        
+        IF (verif=FALSE) THEN
+            s:=s+ta1[i];
+        END_IF
+        
+        
+    END_FOR
+    FOR i FROM 0 TO tab2.lenght-1 STEP step  DO 
+        verif:=FALSE;
+        FOR j FROM 0 TO tab1.lenght-1 STEP step  DO
+            IF (tab2[i]<>tab1[j]) THEN
+                verif:=TRUE;
+                BREAK;
+            END_IF
+        END_FOR
+        IF (verif=FALSE) THEN
+            s:=s+tab2[i];
+        END_IF
+               
+    END_FOR
+    Write("sum of all commun elements" ,s)
+
+END
